@@ -1,0 +1,26 @@
+.Navbar{
+    background: #2d2d2d;
+    color: white;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Navbar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Navbar li{
+    margin: 10px;
+}
+
+.Navbar a{
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}

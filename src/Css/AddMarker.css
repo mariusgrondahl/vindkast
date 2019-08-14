@@ -1,0 +1,39 @@
+.FormContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.FormContainer h1{
+    margin-bottom: 2rem;
+}
+
+
+.FormContainer .flexItem {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.FormContainer input {
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+    background: #fafafa;
+    margin-top: .4rem;
+}
+
+.FormContainer textarea {
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+    background: #fafafa;
+    margin-top: .4rem;
+    min-height: 50px;
+}
+
+.FormContainer label{
+    font-weight: bold;
+}

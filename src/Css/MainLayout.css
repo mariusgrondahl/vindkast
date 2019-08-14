@@ -1,0 +1,21 @@
+@import "Input.css";
+
+body, html{
+  background: tomato;
+}
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    align-self: center;
+  }
+
+.Container {
+    width: 100%;
+    max-width: 1024px;
+    padding: 3rem;
+    box-sizing: border-box;
+}
