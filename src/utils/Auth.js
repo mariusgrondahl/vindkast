@@ -12,7 +12,7 @@ class Auth {
     login(username, password) {
         return axios({
             method: "POST",
-            url: "/auth/login",
+            url: "login",
             baseURL: this.domain,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: qs.stringify({username, password}),
@@ -25,7 +25,7 @@ class Auth {
     signup({username, password, firstname, lastname, email}) {
         return axios({
             method: "POST",
-            url: "/auth/signup",
+            url: "signup",
             baseURL: this.domain,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: qs.stringify({username, firstname, lastname, password, email}),
@@ -51,7 +51,7 @@ class Auth {
     logout(){
        return axios({
             baseURL: this.domain,
-            url: "/auth/logout"
+            url: "logout"
         })
         .then((res)=> {
             localStorage.removeItem('user');

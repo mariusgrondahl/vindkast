@@ -19,3 +19,7 @@ body, html{
     padding: 3rem;
     box-sizing: border-box;
 }
+
+.Container h1{
+  text-align: center;
+}
