@@ -5,11 +5,13 @@ import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
 import Logout from "../Pages/Logout";
 import Temp from "../Pages/axiostemp";
+import Map from "../Pages/Map";
 
 function Routes (props) {
     return(
         <div className="Routes">
             <Route path="/" exact component={Home}/>
+            <Route path="/map" exact component={Map}/>
             <Route path="/signup" exact component={Signup}/>
             <Route path="/login" exact component={Login}/>
             <Route path="/logout" exact component={Logout}/>

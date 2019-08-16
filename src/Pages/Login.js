@@ -3,6 +3,7 @@ import Auth from "../utils/Auth";
 import MainLayout from "../Layout/MainLayout";
 const auth = new Auth();
 
+
 class Signup extends Component {
     constructor(props){
         super(props);
@@ -40,7 +41,8 @@ class Signup extends Component {
         return(
             
             <MainLayout>
-            <h1>Signup!</h1>
+            
+            <h1>Login</h1>
                 <form className="FormContainer" onSubmit={this.handleFormSubmit}>
                     <div className="flexItem">
                         <label>Username:</label>
