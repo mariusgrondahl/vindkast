@@ -14,7 +14,7 @@ class Temp extends Component {
 
     componentDidMount() {
         // Setting the APIURL
-        let URL = `${process.env.REACT_APP_API}/marker`;
+        let URL = `${process.env.REACT_APP_API}/marker/all-markers`;
         //Great hack for making "this" work
         var self = this;
         axios.get(URL)

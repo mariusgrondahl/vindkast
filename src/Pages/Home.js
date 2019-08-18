@@ -5,9 +5,7 @@ class Home extends Component {
     render() {
         return (
             <MainLayout>
- 
-            <h1>Velkommen til Vindkast</h1>
-        
+                <h1>Velkommen</h1>
             </MainLayout>
         )
     }

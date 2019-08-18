@@ -1,0 +1,15 @@
+.MapMarker{
+    background: white;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+}
+
+.MapMarker h1{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.MapMarker p{
+    font-size: 1rem;
+    text-align: center;
+}

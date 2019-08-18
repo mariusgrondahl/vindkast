@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "../Components/Navbar";
+import TopBar from "../Components/TopBar";
 import "../Css/MainLayout.css";
 // This component is meant to share 
 // a basic layout that is used by multiple pages.
@@ -12,12 +13,13 @@ import "../Css/MainLayout.css";
 const MainLayout = (props) => {
 	return (
 		<div>
-			<Navbar />
+			<TopBar />
 			<div className="Wrapper">
 				<div className="Container">
 				{props.children}
 				</div>
 			</div>
+			<Navbar />
 		</div>
 	);
 }

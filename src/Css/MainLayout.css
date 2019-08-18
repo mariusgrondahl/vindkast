@@ -1,7 +1,13 @@
-@import "Input.css";
+@import "Form.css";
 
 body, html{
-  background: tomato;
+  background: linear-gradient(-170deg, rgba(4,193,224,1) 0%, rgba(25,218,202,1) 100%);
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .Wrapper{
@@ -10,7 +16,8 @@ body, html{
     justify-content: center;
     align-items: center;
     width: 100%;
-    align-self: center;
+    height: 100vh;
+    box-sizing: border-box;
   }
 
 .Container {
@@ -18,6 +25,9 @@ body, html{
     max-width: 1024px;
     padding: 3rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Container h1{

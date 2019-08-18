@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "../Css/MapMarker.css"
 
 
 function MapMarker (props) {
