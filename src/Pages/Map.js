@@ -12,34 +12,32 @@ class Map extends Component {
         super(props);
         
         this.state = {
-            response: [],
-            latitude: 37.7577,
-            longitude: -122.4376,
-
+            markers: [],
+            weather: [],
+            latitude: 50,
+            longitude: 5,
             showPopup:{
                 showPopup: true
             },
-
             viewport: {
-                width: 100 + "%",
-                height: 100 + "vh",
-                latitude: 50.7577,
-                longitude: 5.4376,
-                 zoom: 6
+                width: "100vw",
+                height: "100vh",
+                latitude: 50,
+                longitude: 5,
+                zoom: 4
             }
         }; 
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
     componentDidMount() {
         // Setting the APIURL
-        let URL = `${process.env.REACT_APP_API}/marker/all-markers`;
-        //Great hack for making "this" work
-        var self = this;
-        axios.get(URL)
-        .then(function (response){
-            self.setState({response: response.data})
+        let MarkerURL  = `${process.env.REACT_APP_API}/marker/all-markers`;        
+        axios.get(MarkerURL)
+        .then( (response)=>{
+            this.setState({markers: response.data})            
         })
-        .catch(function (error) {
-            return error;
+        .catch((error)=> {
+            return error
         });
     }
 
@@ -48,26 +46,28 @@ class Map extends Component {
     }
     
     render() {
-        console.log(this.state.response)
-        const TOKEN = "pk.eyJ1IjoibWFyaXVzZ3JvbmRhaGwiLCJhIjoiY2p6OHZpb2JpMDMwNTNkbzJlbnJyb2lkdiJ9.zTQFrIU4__uaAPGzAUQSFw";
-
-
-    return (
-        <div>     
-            <Navbar/>
-            <TopBar />
-            <ReactMapGL 
-                onDblClick={this.getLatLng} 
-                mapboxApiAccessToken={TOKEN} 
-                {...this.state.viewport}
-                onViewportChange={(viewport) => this.setState({viewport})}>
-            
-            {/* <Marker longitude="5.5" latitude="5.55"  offsetLeft={-20} offsetTop={-10}>
-                <MapMarker title="MARIUS" desc="Blab"/>
-            </Marker> */}
-
-            </ReactMapGL>
-        </div>
+        let markers = this.state.markers.map(marker => (
+            <Marker latitude={parseInt(marker.lat)} longitude={parseInt(marker.lng)}>
+                    <MapMarker 
+                        lat={parseInt(marker.lat)} 
+                        lng={parseInt(marker.lng)} 
+                        name={marker.spot_name}
+                    />
+            </Marker>
+        ))
+        return (
+            <div>     
+                <Navbar/>
+                <TopBar />
+                <ReactMapGL 
+                    onClick={this.getLatLng}
+                    mapboxApiAccessToken="pk.eyJ1IjoibWFyaXVzZ3JvbmRhaGwiLCJhIjoiY2p6OHZpb2JpMDMwNTNkbzJlbnJyb2lkdiJ9.zTQFrIU4__uaAPGzAUQSFw" 
+                    {...this.state.viewport} 
+                    onViewportChange={(viewport) => this.setState({viewport})}
+                >                
+                    {this.state.markers && markers}
+                </ReactMapGL>
+            </div>
 
 
     );
@@ -75,3 +75,5 @@ class Map extends Component {
 }
 
 export default Map;
+
+

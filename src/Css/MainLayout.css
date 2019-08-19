@@ -1,13 +1,26 @@
 @import "Form.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
 body, html{
   background: linear-gradient(-170deg, rgba(4,193,224,1) 0%, rgba(25,218,202,1) 100%);
-
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Montserrat', sans-serif;
+  color: #2d2d2d;
+}
+
+p{
+  color: #2d2d2d;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 .Wrapper{
@@ -31,5 +44,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .Container h1{
-  text-align: center;
+  text-align: left;
 }

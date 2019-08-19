@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import MainLayout from "../Layout/MainLayout";
+import Fullscreen from "../Components/Fullscreen";
 
 class Home extends Component {
     render() {
         return (
             <MainLayout>
-                <h1>Velkommen</h1>
+                <Fullscreen img="../img/beers.png" title="Create your personal Weatherforcast"/>
             </MainLayout>
         )
     }

@@ -30,4 +30,10 @@
     color: #2d2d2d;
     font-weight: 200;
     text-decoration: none;
+
+}
+
+.Navbar span{
+    color: #2d2d2d;
+    margin: 0px 5px 5px 5px;
 }

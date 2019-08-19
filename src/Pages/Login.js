@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Auth from "../utils/Auth";
 import MainLayout from "../Layout/MainLayout";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 const auth = new Auth();
 
 
@@ -12,6 +14,9 @@ class Signup extends Component {
         user: {
             username: "", 
             password: "", 
+            firstname: "",
+            lastname: "",
+            email: ""
         },
         error: null
     }
@@ -71,6 +76,7 @@ class Signup extends Component {
                     </div>
 
                 </form>
+                <p className="center"><span>Not a user yet? </span><span><Link to="/signup" ><strong>Sign up here</strong></Link></span></p>
             </MainLayout>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../Css/AddMarker.css";
 import axios from "axios";
 import MainLayout from "../Layout/MainLayout";
 import qs from "querystring"; // used for parsing a javascript object in the right format (x-www-form-urlencoded)
