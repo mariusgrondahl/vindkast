@@ -32,7 +32,7 @@ class TopBar extends Component {
     
       componentDidMount() {
         this.setState({
-          loggedIn: auth.getUser(),
+          loggedIn: auth.getUser()
         })
 
       }
@@ -43,10 +43,10 @@ class TopBar extends Component {
         return(
             <div className="TopBar">
                 <div className="logo">
-                <Link to="/" ><img src="../img/vindkastlogo.svg" width="90" /></Link>
+                <Link to="/" ><img src="../img/vindkastlogo.svg" width="110" /></Link>
                     
                 </div>
-                {
+                    {
                     this.state.user?
                     <ul>
                     <li><Link to="/logout" >Logout </Link></li> 

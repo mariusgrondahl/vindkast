@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "../Css/MapMarker.css"
+//import axios from "../utils/Axios";
 import axios from "axios";
-
 
 class MapMarker extends Component {
     constructor(props) {
@@ -15,9 +15,18 @@ class MapMarker extends Component {
     componentDidMount() {  
         let WeatherURL   = process.env.REACT_APP_DARK_SKY + "/" + this.props.lat + "," + this.props.lng;  
 
-        axios.get(WeatherURL)
+        axios({
+            method: "GET",
+            url: WeatherURL,
+            mode: 'no-cors',
+            withCredentials: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
         .then( (response)=>{
-            debugger
             this.setState({weather: response.data})   
         })
         

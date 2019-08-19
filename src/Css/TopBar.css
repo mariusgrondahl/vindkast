@@ -1,10 +1,10 @@
 .TopBar{
     position: absolute;
     top: 0;
-    background: rgba(0, 0, 0, 0); /* Black color with 50% alpha/opacity */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
     color: white;
     width: 100vw;
-    height: 7vh;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,11 +20,17 @@
 }
 
 .TopBar a{
-    color: #2d2d2d;
+    color: #fff;
     font-weight: 600;
     text-decoration: none;
 }
 
 .TopBar ul{
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.TopBar li{
+    margin-top: 10px;
 }

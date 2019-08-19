@@ -4,7 +4,7 @@ import MapMarker from "../Components/MapMarker";
 // import CreateMarker from "../Components/CreateMarker";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
-import axios from "axios";
+import axios from "../utils/Axios";
 
 
 class Map extends Component {
