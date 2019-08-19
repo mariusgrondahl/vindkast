@@ -4,7 +4,7 @@ import MapMarker from "../Components/MapMarker";
 // import CreateMarker from "../Components/CreateMarker";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
-import axios from "../utils/Axios";
+import axios from "axios";
 
 
 class Map extends Component {
@@ -13,7 +13,6 @@ class Map extends Component {
         
         this.state = {
             markers: [],
-            weather: [],
             latitude: 50,
             longitude: 5,
             showPopup:{

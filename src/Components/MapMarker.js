@@ -8,47 +8,39 @@ class MapMarker extends Component {
         super(props);
         
         this.state = {
-            weather: [],
+            weather: []
         }; 
+
         this.componentDidMount = this.componentDidMount.bind(this);
     }
+    
     componentDidMount() {  
-        let WeatherURL   = process.env.REACT_APP_DARK_SKY + "/" + this.props.lat + "," + this.props.lng;  
 
-        axios({
-            method: "GET",
-            url: WeatherURL,
-            mode: 'no-cors',
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-        })
+        let WeatherURL = process.env.REACT_APP_WEATHER_BIT + "&lat=" + this.props.lat + "&lon=" + this.props.lng;  
+        axios.get(WeatherURL)
         .then( (response)=>{
-            this.setState({weather: response.data})   
+            this.setState({weather: response.data.data});   
         })
-        
         .catch((error)=> {
             return error
         });
     }
     render() {
-        let weather = this.state.weather.map(weather => (
-            <div className="weather">
-                <h1>{weather.currently.windSpeed}</h1>
-                <h1>{weather.currently.summary}</h1>
-            </div>
+        
+        let weatherForecast = this.state.weather.map(forecast => (
+            <div className="Forecast">
+                <p><span>Winddirection: </span>{forecast.wind_cdir}</p>
+                <p><span>Windspeed: </span>{forecast.wind_spd}</p>
+                <p><span>Winddirection: </span>{forecast.weather.icon}</p>
+                <p><span>Winddirection: </span>{forecast.wind_cdir}</p>
+            </div>   
         ))
     return(
-                <div className="MapMarker">
-                    <h1>{this.props.name}</h1>
-                    {weather}
-                </div>
-
-
-    )
+            <div className="MapMarker">
+                <h1>{this.props.name}</h1>
+                {weatherForecast}
+            </div>
+        )
     }
 }
 
