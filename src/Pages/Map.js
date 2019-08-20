@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import MapMarker from "../Components/MapMarker";
+import SurfSpot from "../Components/SurfSpot";
 // import CreateMarker from "../Components/CreateMarker";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
 import axios from "axios";
+import Modal from "../Components/Modal";
+import Login from "../Pages/Login";
 
 
 class Map extends Component {
@@ -12,7 +15,7 @@ class Map extends Component {
         super(props);
         
         this.state = {
-            markers: [],
+            surfspots: [],
             latitude: 50,
             longitude: 5,
             showPopup:{
@@ -33,7 +36,7 @@ class Map extends Component {
         let MarkerURL  = `${process.env.REACT_APP_API}/marker/all-markers`;        
         axios.get(MarkerURL)
         .then( (response)=>{
-            this.setState({markers: response.data})            
+            this.setState({surfspots: response.data})            
         })
         .catch((error)=> {
             return error
@@ -43,16 +46,17 @@ class Map extends Component {
     getLatLng(event)  {
         console.log(event.lngLat)
     }
+
     
     render() {
-        let markers = this.state.markers.map(marker => (
-            <Marker latitude={parseInt(marker.lat)} longitude={parseInt(marker.lng)}>
-                    <MapMarker 
-                        lat={parseInt(marker.lat)} 
-                        lng={parseInt(marker.lng)} 
-                        name={marker.spot_name}
-                    />
-            </Marker>
+        let surfspot = this.state.surfspots.map(surfspot => (
+                    <Marker latitude={parseInt(surfspot.lat)} longitude={parseInt(surfspot.lng)}>
+                            <SurfSpot 
+                                name={surfspot.spot_name}
+                                img={surfspot.img}
+                                id={surfspot._id}
+                            />
+                    </Marker>
         ))
         return (
             <div>     
@@ -64,7 +68,9 @@ class Map extends Component {
                     {...this.state.viewport} 
                     onViewportChange={(viewport) => this.setState({viewport})}
                 >                
-                    {this.state.markers && markers}
+                {surfspot}
+
+
                 </ReactMapGL>
             </div>
 
@@ -74,5 +80,4 @@ class Map extends Component {
 }
 
 export default Map;
-
 

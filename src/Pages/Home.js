@@ -6,7 +6,7 @@ class Home extends Component {
     render() {
         return (
             <MainLayout>
-                <Fullscreen img="../img/beers.png" title="Create your personal Weatherforcast"/>
+                <Fullscreen image="../img/beers.png" title="Create your personal Weatherforcast"/>
             </MainLayout>
         )
     }

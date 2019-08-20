@@ -30,7 +30,10 @@
     color: #2d2d2d;
     font-weight: 200;
     text-decoration: none;
+}
 
+.Navbar a:hover{
+    color: #2d2d2d;
 }
 
 .Navbar span{

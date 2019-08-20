@@ -29,15 +29,14 @@ class MapMarker extends Component {
         
         let weatherForecast = this.state.weather.map(forecast => (
             <div className="Forecast">
-                <p><span>Winddirection: </span>{forecast.wind_cdir}</p>
-                <p><span>Windspeed: </span>{forecast.wind_spd}</p>
-                <p><span>Winddirection: </span>{forecast.weather.icon}</p>
-                <p><span>Winddirection: </span>{forecast.wind_cdir}</p>
+                <h1>{forecast.city_name}</h1>
+                <div className="Temp"><strong>{forecast.temp}°</strong></div>
+                <div className="Wind">{forecast.wind_cdir}</div>
+                <div className="Wind">{forecast.wind_spd} ms</div>
             </div>   
         ))
     return(
             <div className="MapMarker">
-                <h1>{this.props.name}</h1>
                 {weatherForecast}
             </div>
         )

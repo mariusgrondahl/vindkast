@@ -1,61 +1,79 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
- 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : '1rem',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
- 
+import MainLayout from "./Layout/MainLayout";
+import Auth from "../utils/Auth";
  
 class CreateMarker extends Component {
-  constructor() {
-    super();
- 
-    this.state = {
-      modalIsOpen: false
-    };
- 
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+  constructor(props){
+    super(props);
+
+  this.state = {
+      user: {
+          lat: "", 
+          lng: "", 
+          spotname: "",
+          n: "",
+          ne: "",
+          e: "",
+          se: "",
+          s: "",
+          sw: "",
+          w: "",
+          nw: ""
+      },
+      error: null
   }
- 
-  openModal() {
-    this.setState({modalIsOpen: true});
+      this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
- 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#2d2d2d';
+
+  handleFormSubmit = (e)=> {
+    e.preventDefault();
+    auth.login(this.state.user.username, this.state.user.password)
+        .then(()=> {
+            this.setState({error: "There was an error"});
+            this.props.history.push("/");
+        })
+        .catch(({response})=> {
+            this.setState({error: response.data.message});
+        })
   }
- 
-  closeModal() {
-    this.setState({modalIsOpen: false});
+
+  handleFormChange = (e)=> {
+    let user = {...this.state.user}
+    user[e.target.name] = e.target.value 
+    this.setState({ 
+        user: user
+    })
   }
- 
   render() {
     return (
-      <div>
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
- 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Create A marker</h2>
-          <div>Here we create a marker</div>
+      <MainLayout>
+            <MainLayout>
+            <h1>Signup!</h1>
+                <form className="FormContainer" onSubmit={this.handleFormSubmit}>
+                    <div className="flexItem">
+                        <label>Lat:</label>
+                        <input 
+                            type="text" 
+                            name="username" 
+                            placeholder="username" 
+                            value={this.state.lat} 
+                            onChange={this.handleFormChange}>
+                        </input>
+                    </div>
 
-        </Modal>
-      </div>
+                    <div className="flexItem">
+                        <label>Lng:</label>
+                        <input 
+                            type="check" 
+                            name="password" 
+                            placeholder="Password" 
+                            value={this.state.lng} 
+                            onChange={this.handleFormChange}>
+                        </input>
+                    </div>
+                    </form>
+                </div>
+        </MainLayout>
     );
   }
 }

@@ -12,8 +12,7 @@ class Navbar extends Component {
            
             <div className="Navbar">
                 <ul>
-                    <li><Link to="/map" ><span><FaMap /></span>Map</Link></li>
-                   
+                    <li><Link to="/map" ><span><FaMap /></span>Map</Link></li>    
                 </ul>
             </div>
         )

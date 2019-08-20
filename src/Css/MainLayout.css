@@ -2,10 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
 body, html{
-  background: linear-gradient(-170deg, rgba(4,193,224,1) 0%, rgba(25,218,202,1) 100%);
+  background: rgba(4,193,224,1);
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,10 +23,14 @@ p{
   color: #2d2d2d;
   font-size: 1rem;
 }
-@media only screen and (min-width: 600px) {
-  body {
-    font-size: 18px;
-  }
+
+a{
+  color: yellow;
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
 }
 
 .Wrapper{
@@ -29,7 +39,7 @@ p{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 50vh;
     box-sizing: border-box;
   }
 

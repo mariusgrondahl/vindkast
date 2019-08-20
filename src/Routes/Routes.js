@@ -5,6 +5,7 @@ import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
 import Logout from "../Pages/Logout";
 import Map from "../Pages/Map";
+import SurfSpotDetail from "../Pages/SurfSpotDetail";
 
 function Routes (props) {
     return(
@@ -14,6 +15,7 @@ function Routes (props) {
             <Route path="/signup" exact component={Signup}/>
             <Route path="/login" exact component={Login}/>
             <Route path="/logout" exact component={Logout}/>
+            <Route path="/spot/:id" exact component={SurfSpotDetail}/>
         </div>
     )
 }

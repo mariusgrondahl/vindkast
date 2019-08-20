@@ -47,7 +47,7 @@ class TopBar extends Component {
                     
                 </div>
                     {
-                    this.state.user?
+                    this.state.loggedIn?
                     <ul>
                     <li><Link to="/logout" >Logout </Link></li> 
                     </ul>

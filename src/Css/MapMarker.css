@@ -1,15 +1,25 @@
 .MapMarker{
-    background: white;
-    padding: .2rem 1rem;
+    background: linear-gradient(-170deg, rgba(4,193,224,0.1) 0%, rgba(25,218,202,0.5) 100%);
+    padding: .4rem .4rem .8rem .4rem;
     border-radius: 5px;
+    text-align: center;
 }
 
 .MapMarker h1{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-align: center;
+    line-height: 1.1rem;
 }
 
 .MapMarker p{
     font-size: 1rem;
     text-align: center;
+}
+
+.Forecast p{
+    font-size: .7rem;
+}
+
+.Forecast .Temp{
+    font-size: 1rem;
 }

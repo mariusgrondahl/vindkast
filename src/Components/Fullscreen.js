@@ -9,7 +9,7 @@ class Fullscreen extends Component {
 
         return(
             <div className="Fullscreen" style={styling}>
-                <h1>{this.props.title}</h1>
+                <h1><span>{this.props.title}</span></h1>
             </div>
         )
     }
