@@ -11,8 +11,9 @@ class Home extends Component {
                  />
             <MainLayout>
                 <h1>Welcome to Surfspots</h1>
-                <p>We`ve all been there. You`re travelling, the wind is picking up but it`s hard to find
-                a surfspot. Look no further</p>
+                <p>We`ve all been there. You`re travelling to a new place and you have been googling surfspots for a week.
+                    Finally, there i a solution.
+                </p>
                 <button>See surfspots</button>
 
             </MainLayout>

@@ -43,7 +43,7 @@ class TopBar extends Component {
         return(
             <div className="TopBar">
                 <div className="logo">
-                <Link to="/map" ><img src="../img/windspot.svg" width="130" /></Link>
+                <Link to="/" ><img src="../img/windspot.svg" width="130" /></Link>
                     
                 </div>
                     {

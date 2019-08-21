@@ -1,19 +1,19 @@
 .MapMarker{
-    background: rgba(255, 255, 255, 0.9);
+    background: #2d2d2d;
     padding: .2rem .8rem .2rem .8rem;
     border-radius: 5px;
     text-align: center;
 }
 
 .MapMarker h1{
-    font-size: 1.1rem;
+    font-size: .8rem;
     text-align: center;
-    line-height: 1.1rem;
-    color: #2d2d2d;
+    line-height: .8rem;
+    color: yellow;
 }
 
 .MapMarker a{
-    color: #2d2d2d;
+    color: yellow;
 }
 
 .MapMarker p{

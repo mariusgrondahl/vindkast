@@ -44,7 +44,9 @@ class SurfSpotDetail extends Component {
     
     render(){
         let windyURL = "https://www.windy.com/?" + this.state.response.lat + "," + this.state.response.lng;
-        let windyEmbed = "https://embed.windy.com/embed2.html?lat=" + this.state.response.lat + "&lon=" + this.state.response.lng + "&zoom=9&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=52.346&detailLon=4.874&metricWind=default&metricTemp=default&radarRange=-1"
+        let windyEmbed = "https://embed.windy.com/embed2.html?lat=" + this.state.response.lat + "&lon=" + this.state.response.lng + "&zoom=9&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=52.346&detailLon=4.874&metricWind=default&metricTemp=default&radarRange=-1";
+        let windyEmbedMap = <iframe width="100%" height="450" src={windyEmbed} frameborder="0"></iframe>
+
         return(
             <div>
                 <Fullscreen  
@@ -56,7 +58,7 @@ class SurfSpotDetail extends Component {
                     <h4>Winddirections:</h4>
                     {this.getWindDirections()}
                     <h2>Forecast:</h2>
-                    <iframe width="100%" height="450" src={windyEmbed} frameborder="0"></iframe>
+                    {windyEmbedMap}
                 </MainLayout>  
             </div>
         )

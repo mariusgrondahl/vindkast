@@ -18,7 +18,7 @@
 input {
     font-size: 1rem;
     padding: .5rem;
-    border-radius: 5px;
+    border-radius: 2px;
     border: none;
     background: #fafafa;
     margin-top: .4rem;
@@ -27,7 +27,7 @@ input {
 textarea {
     font-size: 1rem;
     padding: .5rem;
-    border-radius: 5px;
+    border-radius: 2px;
     border: none;
     background: #fafafa;
     margin-top: .4rem;
@@ -35,6 +35,8 @@ textarea {
 }
 
 label{
-    font-weight: bold;
+    font-weight: light;
 }
+
+
 
