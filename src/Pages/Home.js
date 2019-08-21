@@ -5,9 +5,18 @@ import Fullscreen from "../Components/Fullscreen";
 class Home extends Component {
     render() {
         return (
+            <div>
+            <Fullscreen  
+            image="../img/surfspot.jpg" 
+                 />
             <MainLayout>
-                <Fullscreen image="../img/beers.png" title="Create your personal Weatherforcast"/>
+                <h1>Welcome to Surfspots</h1>
+                <p>We`ve all been there. You`re travelling, the wind is picking up but it`s hard to find
+                a surfspot. Look no further</p>
+                <button>See surfspots</button>
+
             </MainLayout>
+            </div>
         )
     }
 }

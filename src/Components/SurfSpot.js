@@ -17,11 +17,13 @@ class SurfSpot extends Component {
     
     render() {
         
-    return(          
+    return(      
+        <Link to={`/spot/${this.props.id}`} > 
             <div className="MapMarker">
                 <h1>{this.props.name}</h1>
-                <Link to={`/spot/${this.props.id}`} >Se mer</Link>
+                
             </div>
+        </Link>
         )
     }
 }

@@ -50,7 +50,10 @@ class Map extends Component {
     
     render() {
         let surfspot = this.state.surfspots.map(surfspot => (
-                    <Marker latitude={parseInt(surfspot.lat)} longitude={parseInt(surfspot.lng)}>
+                    <Marker 
+                        latitude={parseInt(surfspot.lat)} 
+                        longitude={parseInt(surfspot.lng)}
+                    >
                             <SurfSpot 
                                 name={surfspot.spot_name}
                                 img={surfspot.img}

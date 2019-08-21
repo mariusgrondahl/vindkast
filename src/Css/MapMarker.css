@@ -1,6 +1,6 @@
 .MapMarker{
-    background: linear-gradient(-170deg, rgba(4,193,224,0.1) 0%, rgba(25,218,202,0.5) 100%);
-    padding: .4rem .4rem .8rem .4rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: .2rem .8rem .2rem .8rem;
     border-radius: 5px;
     text-align: center;
 }
@@ -9,6 +9,11 @@
     font-size: 1.1rem;
     text-align: center;
     line-height: 1.1rem;
+    color: #2d2d2d;
+}
+
+.MapMarker a{
+    color: #2d2d2d;
 }
 
 .MapMarker p{
