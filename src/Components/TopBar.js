@@ -51,7 +51,11 @@ class TopBar extends Component {
                     {
                     this.state.loggedIn?
                     <ul>
-                    <li>{this.state.loggedIn.firstname} | <Link to="/logout" > Logout </Link></li> 
+                      
+                    <li>
+                    <Link to={`/user/${this.state.loggedIn.id}`}> 
+                    Hi, {this.state.loggedIn.firstname}</Link>
+                    </li> 
                     </ul>
                     :
                     <ul>
@@ -64,3 +68,4 @@ class TopBar extends Component {
 }
 
 export default withRouter(TopBar);
+

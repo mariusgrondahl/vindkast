@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const auth = new Auth();
 
-
 class Signup extends Component {
     constructor(props){
         super(props);
@@ -46,7 +45,7 @@ class Signup extends Component {
         return(
             
             <MainLayout>
-            
+              <div className="MarginTop"></div>
             <h1>Login</h1>
                 <form className="FormContainer" onSubmit={this.handleFormSubmit}>
                     <div className="flexItem">

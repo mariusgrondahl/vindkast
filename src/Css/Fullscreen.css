@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    align-items: center;
     width: 100%;
     height: 35vh;
     background-size: cover;
@@ -17,7 +18,16 @@
 
 .Fullscreen h1{
     color: white;
-    font-size: 1.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    /* text-shadow: 0px 0px 10px rgba(45,45,45,0.79); */
+}
+
+.Fullscreen p{
+    color: white;
+    font-size: 1.2rem;
+    padding: 0rem 2rem;
+    max-width: 980px;
     /* text-shadow: 0px 0px 10px rgba(45,45,45,0.79); */
 }
 

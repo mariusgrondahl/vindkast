@@ -4,6 +4,7 @@ import SurfSpot from "../Components/SurfSpot";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
 import axios from "axios";
+
 import Modal from "../Components/Modal";
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaXVzZ3JvbmRhaGwiLCJhIjoiY2p6OHZpb2JpMDMwNTNkbzJlbnJyb2lkdiJ9.zTQFrIU4__uaAPGzAUQSFw';
@@ -52,12 +53,11 @@ class Map extends Component {
 
     getLatLng(event)  {
         let newSpot = event.lngLat;
-        window.alert("This is the lat long:" + newSpot);
+        return <Modal title="Create spot?" lat={event.lngLat} />
     }
 
     _onViewportChange = viewport => this.setState({viewport});
 
-    
     
     render() {
         let surfspot = this.state.surfspots.map(surfspot => (
@@ -91,7 +91,7 @@ class Map extends Component {
                     positionOptions={{enableHighAccuracy: false}}
                     trackUserLocation={true}
                     
-                /> <h5>Locate User</h5>
+                /> 
 
                 </div>   
                 

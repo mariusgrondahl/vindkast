@@ -38,7 +38,7 @@ class SurfSpotDetail extends Component {
         if (direction.west === true ) { this.state.winddirections.push("West")};
         if (direction.north_west === true ) { this.state.winddirections.push("North West")};
 
-        return this.state.winddirections.toString();
+        return this.state.winddirections.join(" | ");
         
     }
     
@@ -49,12 +49,13 @@ class SurfSpotDetail extends Component {
 
         return(
             <div>
+                <Fullscreen height="35vh" image={this.state.response.img}/>
                 <MainLayout>
                     <h1>{this.state.response.spot_name}</h1>
                     <p>{this.state.response.desc}</p>
                     <h4>Winddirections:</h4>
                     {this.getWindDirections()}
-                    <h2>Forecast:</h2>
+                    <h2>Forecast from Windy:</h2>
                     {windyEmbedMap}
                 </MainLayout>  
             </div>

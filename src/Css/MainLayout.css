@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Hepta+Slab:200,400,600&display=swap');
 
 body, html{
-  background: rgba(4,193,224,1); 
+  background: #02364e; 
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #fff;
@@ -40,14 +40,19 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
     box-sizing: border-box;
   }
 
+.MarginTop{
+    margin-top: 5rem;
+}
+
 .Container {
     width: 100%;
     max-width: 980px;
-    padding: 7rem 1.5rem 6rem 1.5rem;
+    padding: 1rem 1.5rem 6rem 1.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

@@ -4,11 +4,14 @@ import "../Css/Fullscreen.css";
 class Fullscreen extends Component {
     render(){
         var styling = {
-            backgroundImage: 'url(' + this.props.image + ')'
+            backgroundImage: 'url(' + this.props.image + ')',
+            height: this.props.height
           };
 
         return(
-            <div className="Fullscreen" style={styling}></div>
+            <div className="Fullscreen" style={styling}>
+                {this.props.children}
+            </div>
         )
     }
 

@@ -83,7 +83,9 @@ class CreateSpot extends Component {
     render(){
         return(
             <MainLayout>
+                <div className="MarginTop"></div>
                 <h1>Add a new spot</h1>
+
                 <form className="FormContainer" onSubmit={this.handleFormSubmit}>
                     <div className="flexItem">
                         <label>Spotname</label>
@@ -141,67 +143,79 @@ class CreateSpot extends Component {
                         </input>
                     </div>
 
-                    <div className="flexItem">
-                        <h3>Winddirections:</h3>
-
+                    <h3>Best winddirections:</h3>
+                    <div className="flexItem-row">
                         <input type="checkbox" name="north" 
                             value={this.state.north} 
-                            onChange={this.handleCheckBoxChange}
-                        >
+                            onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>North</label>
+                    </div>
 
+                    <div className="flexItem-row">
                         <input type="checkbox"  name="north_east" 
                             value={this.state.north_east} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>Northeast</label>
+                    </div>
 
+                    <div className="flexItem-row-row">
                         <input type="checkbox"  name="east" 
                             value={this.state.east} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>East</label>
+                    </div>
 
+                    <div className="flexItem-row">
                         <input type="checkbox"  name="south_east" 
                             value={this.state.south_east} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>Southeast</label>
+                    </div>
 
+                    <div className="flexItem-row">
                         <input type="checkbox"  name="south" 
                             value={this.state.south} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>South</label>
+                    </div>
 
+                    <div className="flexItem-row">
                         <input type="checkbox"  name="south_west" 
                             value={this.state.south_west} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>Southwest</label>
+                    </div>
 
+                    <div className="flexItem-row">
                         <input type="checkbox"  name="west" 
                             value={this.state.west} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>West</label>
+                    </div>
 
-
+                    <div className="flexItem-row">
                         <input type="checkbox"  name="north_west" 
                             value={this.state.north_west} 
                             onChange={this.handleCheckBoxChange}>
                         </input>
                         <label>Northwest</label>
-
                     </div>
 
-                    <div className="flexItem">
+             
+                    <div className="flexItem-row">
                         <button type="submit" value="Submit">Add spot</button>
       
                     </div>
 
                 </form>
+
             </MainLayout>
         )
     }

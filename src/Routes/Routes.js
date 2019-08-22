@@ -7,6 +7,8 @@ import Logout from "../Pages/Logout";
 import Map from "../Pages/Map";
 import CreateSpot from "../Pages/CreateSpot"
 import SurfSpotDetail from "../Pages/SurfSpotDetail";
+import User from "../Pages/UserDetail";
+import PrivateRoute from "../Routes/PrivateRoute";
 
 function Routes (props) {
     return(
@@ -17,7 +19,10 @@ function Routes (props) {
             <Route path="/signup" exact component={Signup}/>
             <Route path="/login" exact component={Login}/>
             <Route path="/logout" exact component={Logout}/>
-            <Route path="/create" exact component={CreateSpot}/>
+
+            <PrivateRoute redirectUrl='/login' path="/user/:id" exact component={User}/>
+            <PrivateRoute redirectUrl='/login' path="/create" component={CreateSpot} />
+
         </div>
     )
 }

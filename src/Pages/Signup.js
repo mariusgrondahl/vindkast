@@ -36,6 +36,7 @@ class Signup extends Component {
     render(){
         return(
             <MainLayout>
+            <div className="MarginTop"></div>
             <h1>Signup!</h1>
                 <form className="FormContainer" onSubmit={this.handleFormSubmit}>
                     <div className="flexItem">
