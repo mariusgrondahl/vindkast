@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MainLayout from "../Layout/MainLayout";
 import Fullscreen from "../Components/Fullscreen";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../utils/Axios";
 
 class User extends Component {
     constructor(props) {

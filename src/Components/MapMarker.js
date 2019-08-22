@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "../Css/MapMarker.css"
-//import axios from "../utils/Axios";
-import axios from "axios";
+import axios from "../utils/Axios";
 
 class MapMarker extends Component {
     constructor(props) {

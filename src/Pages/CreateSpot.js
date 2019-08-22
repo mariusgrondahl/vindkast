@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MainLayout from "../Layout/MainLayout";
 import Fullscreen from "../Components/Fullscreen";
-import axios from "axios";
+import axios from "../utils/Axios";
 import qs from "querystring";
 
 class CreateSpot extends Component {

@@ -30,6 +30,7 @@ class Signup extends Component {
                 this.props.history.push("/");
             })
             .catch((response)=> {
+                console.log(response)
                 this.setState({error: response.data.message});
             })
       }

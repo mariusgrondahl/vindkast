@@ -3,7 +3,7 @@ import ReactMapGL, {Marker, GeolocateControl, Popup} from 'react-map-gl';
 import SurfSpot from "../Components/SurfSpot";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
-import axios from "axios";
+import axios from "../utils/Axios";
 
 import Modal from "../Components/Modal";
 

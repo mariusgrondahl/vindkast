@@ -5,7 +5,7 @@ import SurfSpot from "../Components/SurfSpot";
 // import CreateMarker from "../Components/CreateMarker";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
-import axios from "axios";
+import axios from "../utils/Axios";
 import Modal from "../Components/Modal";
 
 
