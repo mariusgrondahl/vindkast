@@ -29,7 +29,7 @@ class Signup extends Component {
                 this.setState({error: "There was an error"});
                 this.props.history.push("/");
             })
-            .catch(({response})=> {
+            .catch((response)=> {
                 this.setState({error: response.data.message});
             })
       }
