@@ -49,9 +49,6 @@ class SurfSpotDetail extends Component {
 
         return(
             <div>
-                <Fullscreen  
-                    image={this.state.response.img} 
-                />
                 <MainLayout>
                     <h1>{this.state.response.spot_name}</h1>
                     <p>{this.state.response.desc}</p>

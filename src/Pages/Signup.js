@@ -95,7 +95,7 @@ class Signup extends Component {
 
 
                     <div className="flexItem">
-                        <input type="submit" value="Submit" />
+                        <button type="submit" value="Submit">Sign up</button>
                     </div>
 
                 </form>

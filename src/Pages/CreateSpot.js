@@ -26,7 +26,6 @@ class CreateSpot extends Component {
     }
 
     CreateSpot(spot_name, desc, lat, lng, img, north, north_east, east, south_east, south, south_west, west, north_west) {
-        debugger
         return axios({
             method: "POST",
             url: "marker/create",
@@ -145,7 +144,7 @@ class CreateSpot extends Component {
                     <div className="flexItem">
                         <h3>Winddirections:</h3>
 
-                        <input  type="checkbox" name="north" 
+                        <input type="checkbox" name="north" 
                             value={this.state.north} 
                             onChange={this.handleCheckBoxChange}
                         >
@@ -198,7 +197,7 @@ class CreateSpot extends Component {
                     </div>
 
                     <div className="flexItem">
-                        <button type="submit" value="Submit">Submit</button>
+                        <button type="submit" value="Submit">Add spot</button>
       
                     </div>
 

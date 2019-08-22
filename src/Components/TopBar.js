@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import Auth from "../utils/Auth";
 import "../Css/TopBar.css";
+import { FaUser} from 'react-icons/fa';
+
 
 const auth = new Auth();
 
@@ -11,7 +13,8 @@ class TopBar extends Component {
         super(props);
     
         this.state = { 
-          loggedIn: null
+          loggedIn: null,
+          username: ""
         }
       }
 
@@ -29,16 +32,15 @@ class TopBar extends Component {
             this.setState({error: error.message})
           })
       }
-    
+
+      
       componentDidMount() {
         this.setState({
           loggedIn: auth.getUser()
         })
-
       }
     render(){
-       //  var username = JSON.parse(localStorage.getItem('user'));
-       // let name = username.firstname + " " + username.lastname;
+
 
         return(
             <div className="TopBar">
@@ -49,7 +51,7 @@ class TopBar extends Component {
                     {
                     this.state.loggedIn?
                     <ul>
-                    <li><Link to="/logout" >Logout </Link></li> 
+                    <li>{this.state.loggedIn.firstname} | <Link to="/logout" > Logout </Link></li> 
                     </ul>
                     :
                     <ul>

@@ -1,24 +1,24 @@
 @import "Form.css";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab:200,400,600&display=swap');
+
 body, html{
-  background: #2d3d49;
-  /* background: rgba(4,193,224,1); */
+  background: rgba(4,193,224,1); 
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #fff;
 
 }
 
-@media only screen and (min-width: 600px) {
-  body {
-    font-size: 18px;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Hepta Slab', serif;
+  color: #fff;
+  font-weight: 600;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
+h1{
+  margin-bottom: 1.5rem;
 }
 
 p{
@@ -39,26 +39,23 @@ a:hover{
 .Wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 60vh;
     box-sizing: border-box;
   }
 
 .Container {
     width: 100%;
     max-width: 980px;
-    padding: 1.5rem 1.5rem 6rem 1.5rem;
+    padding: 7rem 1.5rem 6rem 1.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .Container h1{
   text-align: left;
-  margin: 0;
 }
 
 ul{
@@ -71,7 +68,22 @@ button{
   background: yellow;
   color: #2d2d2d;
   font-size: 1.1rem;
+  font-weight: bold;
   padding: .5rem .4rem;
+  margin-top: 1rem;
   border: none;
+  font-family: 'Hepta Slab', serif;
   border-radius: 3px;
 }
+
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  button{
+    max-width: 200px;
+  }
+
+}
+

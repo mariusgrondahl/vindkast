@@ -63,7 +63,7 @@ class Signup extends Component {
                     <div className="flexItem">
                         <label>Password:</label>
                         <input 
-                            type="text" 
+                            type="password" 
                             name="password" 
                             placeholder="Password" 
                             value={this.state.password} 
@@ -72,7 +72,7 @@ class Signup extends Component {
                     </div>
 
                     <div className="flexItem">
-                        <input type="submit" value="Submit" />
+                         <button type="submit" value="Submit">Login</button>
                     </div>
 
                 </form>

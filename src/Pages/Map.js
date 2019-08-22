@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
-import ReactMapGL, {Marker, Popup} from 'react-map-gl';
-import MapMarker from "../Components/MapMarker";
+import ReactMapGL, {Marker, GeolocateControl, Popup} from 'react-map-gl';
 import SurfSpot from "../Components/SurfSpot";
-// import CreateMarker from "../Components/CreateMarker";
 import TopBar from "../Components/TopBar";
 import Navbar from "../Components/Navbar";
 import axios from "axios";
 import Modal from "../Components/Modal";
-import Login from "../Pages/Login";
 
+const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaXVzZ3JvbmRhaGwiLCJhIjoiY2p6OHZpb2JpMDMwNTNkbzJlbnJyb2lkdiJ9.zTQFrIU4__uaAPGzAUQSFw';
+
+const geolocateStyle = {
+    position: 'absolute',
+    bottom: 50,
+    left: 0,
+    margin: 10
+  };
 
 class Map extends Component {
     constructor(props) {
@@ -16,17 +21,19 @@ class Map extends Component {
         
         this.state = {
             surfspots: [],
-            latitude: 50,
-            longitude: 5,
+            latitude: 56,
+            longitude: 9,
             showPopup:{
                 showPopup: true
             },
             viewport: {
                 width: "100vw",
                 height: "100vh",
-                latitude: 50,
-                longitude: 5,
-                zoom: 4
+                latitude: 56,
+                longitude: 9,
+                zoom: 4,
+                bearing: 0,
+                pitch: 0
             }
         }; 
         this.componentDidMount = this.componentDidMount.bind(this);
@@ -44,9 +51,13 @@ class Map extends Component {
     }
 
     getLatLng(event)  {
-        console.log(event.lngLat)
+        let newSpot = event.lngLat;
+        window.alert("This is the lat long:" + newSpot);
     }
 
+    _onViewportChange = viewport => this.setState({viewport});
+
+    
     
     render() {
         let surfspot = this.state.surfspots.map(surfspot => (
@@ -65,14 +76,28 @@ class Map extends Component {
             <div>     
                 <Navbar/>
                 <TopBar />
-                <ReactMapGL 
-                    onClick={this.getLatLng}
-                    mapboxApiAccessToken="pk.eyJ1IjoibWFyaXVzZ3JvbmRhaGwiLCJhIjoiY2p6OHZpb2JpMDMwNTNkbzJlbnJyb2lkdiJ9.zTQFrIU4__uaAPGzAUQSFw" 
-                    {...this.state.viewport} 
-                    onViewportChange={(viewport) => this.setState({viewport})}
-                >                
-                {surfspot}
 
+                <ReactMapGL 
+ 
+                    mapboxApiAccessToken={MAPBOX_TOKEN} 
+                    {...this.state.viewport} 
+                    onClick={this.getLatLng}
+                    onViewportChange={(viewport) => this.setState({viewport})
+                }
+                >  
+                <div className="locateUser">      
+                <GeolocateControl
+                    style={geolocateStyle}
+                    positionOptions={{enableHighAccuracy: false}}
+                    trackUserLocation={true}
+                    
+                /> <h5>Locate User</h5>
+
+                </div>   
+                
+            
+
+                {surfspot}
 
                 </ReactMapGL>
             </div>
