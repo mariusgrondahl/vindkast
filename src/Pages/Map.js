@@ -52,8 +52,7 @@ class Map extends Component {
     }
 
     getLatLng(event)  {
-        let newSpot = event.lngLat;
-        return <Modal title="Create spot?" lat={event.lngLat} />
+        console.log(event.lngLat)
     }
 
     _onViewportChange = viewport => this.setState({viewport});
@@ -78,10 +77,9 @@ class Map extends Component {
                 <TopBar />
 
                 <ReactMapGL 
- 
+                    onClick={this.getLatLng}
                     mapboxApiAccessToken={MAPBOX_TOKEN} 
                     {...this.state.viewport} 
-                    onClick={this.getLatLng}
                     onViewportChange={(viewport) => this.setState({viewport})
                 }
                 >  
