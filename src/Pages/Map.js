@@ -30,9 +30,9 @@ class Map extends Component {
             viewport: {
                 width: "100vw",
                 height: "100vh",
-                latitude: 56,
-                longitude: 9,
-                zoom: 4,
+                latitude: 48,
+                longitude: 2.3,
+                zoom: 3,
                 bearing: 0,
                 pitch: 0
             }

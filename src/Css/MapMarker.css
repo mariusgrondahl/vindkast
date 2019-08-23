@@ -1,7 +1,9 @@
 .MapMarker{
+    position: relative;
     background: #02364e;
     border-radius: 3px;
     text-align: center;
+    margin: 0;
 }
 
 .MapMarker h1{
