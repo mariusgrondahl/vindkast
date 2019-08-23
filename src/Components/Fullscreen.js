@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../Css/Fullscreen.css";
 
+
 class Fullscreen extends Component {
     render(){
         var styling = {
